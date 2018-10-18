@@ -35,15 +35,15 @@ public class Db {
     public static ArrayList<Empresa> getEmpresas(){
         if (empresas.isEmpty()){
             Empresa c1 = new Empresa();
-            c1.setDados("Itaú", "ITAÚ UNIBANCO HOLDING S.A.", "60.872.504/0001-23", "4004-4828", "https://www.itau.com.br/");
+            c1.setDados("Itaú", "ITAÚ S.A.", "60.872.504/0001-23", "4004-4828", "www.itau.com.br");
             empresas.add(c1);
            
             Empresa c2 = new Empresa();
-            c2.setDados("IBM", " IBM BRASIL-INDUSTRIA MAQUINAS E SERVICOS LIMITADA", "33.372.251/0100-38", "0800-701 4262", "https://www.ibm.com/br-pt/");
+            c2.setDados("IBM", " IBM BRASIL", "33.372.251/0100-38", "0800-701-4262", "www.ibm.com");
             empresas.add(c2);
             
             Empresa c3 = new Empresa();
-            c3.setDados("Lacta", "MONDELEZ LACTA ALIMENTOS LTDA", "56.993.645/0001-27", "0800-704 1940", "https://www.lacta.com.br/");
+            c3.setDados("Lacta", "MONDELEZ LACTA LTDA", "56.993.645/0001-27", "0800-704-1940", "www.lacta.com.br");
             empresas.add(c3);
         }
         return empresas;

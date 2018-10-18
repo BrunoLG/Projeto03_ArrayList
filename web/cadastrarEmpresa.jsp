@@ -23,12 +23,7 @@
             <div class="row">
                 <div class="col-6 my-3">
                     <h2>Preencha o Formulário</h2>
-                                    <td><%= c.getNome() %></td>
-                                    <td><%= c.getRazao() %></td>
-                                    <td><%= c.getCnpj() %></td>
-                                    <td><%= c.getTel() %></td>
-                                    <td><%= c.getWeb() %></td>
-                    <%
+                    <%  
                         if(request.getParameter("cadastrar") != null){
                             String nome = request.getParameter("nome");
                             String razao = request.getParameter("razao");

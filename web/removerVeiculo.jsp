@@ -38,19 +38,19 @@
                         </div>
                         <div class="form-group">
                             <label>Placa: </label>
-                            <input type="text" class="form-control" name="placa" value="<%= v.getPlaca() %>" readonly>
+                            <input type="text" class="form-control" value="<%= v.getPlaca() %>" readonly>
                         </div>
                         <div class="form-group">
                             <label>Marca: </label>
-                            <input type="text" class="form-control" name="marca" value="<%= v.getMarca() %>" readonly>
+                            <input type="text" class="form-control" value="<%= v.getMarca() %>" readonly>
                         </div>
                         <div class="form-group">
                             <label>Modelo: </label>
-                            <input type="text" class="form-control" name="modelo" value="<%= v.getModelo() %>" readonly>
+                            <input type="text" class="form-control" value="<%= v.getModelo() %>" readonly>
                         </div>
                         <div class="form-group">
                             <label>Cor: </label>
-                            <input type="text" class="form-control" name="cor" value="<%= v.getCor() %>" readonly>
+                            <input type="text" class="form-control" value="<%= v.getCor() %>" readonly>
                         </div>
                         <center> 
                             <input class="btn btn-primary mb-4" type="submit" value="Remover" name="remover"/>

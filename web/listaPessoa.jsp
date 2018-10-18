@@ -18,29 +18,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-5">
-                    <h1 class="display-3">Lista de pessoas</h1>           
+                    <h1 class="display-3">Lista de Pessoas</h1>           
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 my-3">
-                    <table class="table table-hover">
-                        <a href="cadastrarPessoa.jsp"><button>Cadastrar nova pessoa</button></a>        
+                    <table class="table table-hover">      
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Nome</th>
-                                <th>Cpf</th>
+                                <th>CPF</th>
                                 <th>Email</th>
                                 <th>Telefone</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <% for(Pessoa c: Db.getPessoas()){ %>
+                            <% for(Pessoa p: Db.getPessoas()){ %>
                             <tr>
-                                    <td><%= c.getNome() %></td>
-                                    <td><%= c.getCpf() %></td>
-                                    <td><%= c.getEmail() %></td>
-                                    <td><%= c.getTelefone() %></td>
-                                    <% int i = Db.getPessoas().indexOf(c); %>
+                                    <% int i = Db.getPessoas().indexOf(p); %>
+                                    <td><%= i %></td>
+                                    <td><%= p.getNome() %></td>
+                                    <td><%= p.getCpf() %></td>
+                                    <td><%= p.getEmail() %></td>
+                                    <td><%= p.getTelefone() %></td>
                                     <td>
                                         <a class="btn btn-secondary" href="alterarPessoa.jsp?i=<%= i %>" role="button">Alterar</a>
                                         <a class="btn btn-secondary" href="removerPessoa.jsp?i=<%= i %>" role="button">Remover</a>
@@ -51,6 +53,10 @@
                         </table>
                 </div>
             </div>
+            <center> 
+                <a class="btn btn-primary mb-4" href="cadastrarPessoa.jsp" role="button">Cadastrar</a>
+                <a class="btn btn-secondary mb-4" href="index.jsp" role="button">Voltar</a>
+            </center>            
         </div>
     </body>
 </html>

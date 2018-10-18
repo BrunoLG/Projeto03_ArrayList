@@ -14,7 +14,7 @@
         <%@include file="WEB-INF/jspf/head.jspf" %>
     </head>
     <%  int i = Integer.parseInt(request.getParameter("i")); 
-        Pessoa c = Db.getPessoas().get(i); 
+        Pessoa p = Db.getPessoas().get(i); 
     %>
     <body class="bg-light">
         <% if(request.getParameter("alterar") != null){
@@ -24,8 +24,8 @@
                 String telefone = request.getParameter("telefone");
                                          
                 
-                c.setDados(nome, cpf, email, telefone);
-                Db.getPessoas().set(i, c);
+                p.setDados(nome, cpf, email, telefone);
+                Db.getPessoas().set(i, p);
                 response.sendRedirect("listaPessoa.jsp");
         } %>
         <div class="container">
@@ -39,19 +39,28 @@
                     <h2>Preencha o Formulário</h2>
                     <form method="get" class="my-3">
                         <div class="form-group">
-                            <input type="hidden" name="i" value="<%= i %>">
+                            <label>Indice: </label>
+                            <input type="text" class="form-control" name="i" value="<%= i %>" readonly>
+                        </div>
+                        <div class="form-group">
                             <label>Nome: </label>
-                            <input type="text" class="form-control" name="nome" placeholder="Nome" value="<%= c.getNome() %>" required>
-                            <label>Cpf: </label>
-                            <input type="text" class="form-control" name="cpf" placeholder="Cpf" value="<%= c.getCpf() %>" required>
+                            <input type="text" class="form-control" name="nome" value="<%= p.getNome() %>" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CPF: </label>
+                            <input type="text" class="form-control" name="cpf" value="<%= p.getCpf() %>" required>
+                        </div>
+                        <div class="form-group">
                             <label>E-mail: </label>
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="<%= c.getEmail() %>" required>
+                            <input type="text" class="form-control" name="email" value="<%= p.getEmail() %>" required>
+                        </div>
+                        <div class="form-group">
                             <label>Telefone: </label>
-                            <input type="text" class="form-control" name="telefone" placeholder="Telefone" value="<%= c.getTelefone() %>" required>                     
+                            <input type="text" class="form-control" name="telefone" value="<%= p.getTelefone() %>" required>
                         </div>
                         <center> 
                             <input class="btn btn-primary mb-4" type="submit" value="Alterar" name="alterar"/>
-                            <a class="btn btn-secondary mb-4" href="listaEmpresa.jsp" role="button">Voltar</a>
+                            <a class="btn btn-secondary mb-4" href="listaPessoa.jsp" role="button">Voltar</a>
                         </center>
                     </form>
                 </div>

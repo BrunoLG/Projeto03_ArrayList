@@ -14,7 +14,7 @@
         <%@include file="WEB-INF/jspf/head.jspf" %>
     </head>
     <%  int i = Integer.parseInt(request.getParameter("i")); 
-        Pessoa c = Db.getPessoas().get(i); 
+        Pessoa p = Db.getPessoas().get(i); 
     %>
     <body class="bg-light">
         <div class="container">
@@ -29,11 +29,27 @@
             } %>
             <div class="row">
                 <div class="col-6 my-3">
-                    <h2>Dados do </h2>
+                    <h2>Dados da Pessoa</h2>
                     <form method="get" class="my-3">
                         <div class="form-group">
-                            Nome: <%= c.getNome() %> </br></br>
-                             <input type="hidden" name="i" value="<%= i %>">
+                            <label>Indice: </label>
+                            <input type="text" class="form-control" name="i" value="<%= i %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Nome: </label>
+                            <input type="text" class="form-control" value="<%= p.getNome() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>CPF: </label>
+                            <input type="text" class="form-control" value="<%= p.getCpf() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail: </label>
+                            <input type="text" class="form-control" value="<%= p.getEmail() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone: </label>
+                            <input type="text" class="form-control" value="<%= p.getTelefone() %>" readonly>
                         </div>
                         <center> 
                             <input class="btn btn-primary mb-4" type="submit" value="Remover" name="remover"/>

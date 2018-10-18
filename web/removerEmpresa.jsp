@@ -14,7 +14,7 @@
         <%@include file="WEB-INF/jspf/head.jspf" %>
     </head>
     <%  int i = Integer.parseInt(request.getParameter("i")); 
-        Empresa c = Db.getEmpresas().get(i); 
+        Empresa e = Db.getEmpresas().get(i); 
     %>
     <body class="bg-light">
         <div class="container">
@@ -29,11 +29,31 @@
             } %>
             <div class="row">
                 <div class="col-6 my-3">
-                    <h2>Dados do </h2>
+                    <h2>Dados da Empresa</h2>
                     <form method="get" class="my-3">
                         <div class="form-group">
-                            Nome: <%= c.getNome() %> </br></br>
-                             <input type="hidden" name="i" value="<%= i %>">
+                            <label>Indice: </label>
+                            <input type="text" class="form-control" name="i" value="<%= i %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Nome: </label>
+                            <input type="text" class="form-control" value="<%= e.getNome() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Razão Social: </label>
+                            <input type="text" class="form-control" value="<%= e.getRazao() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>CNPJ: </label>
+                            <input type="text" class="form-control" value="<%= e.getCnpj() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone: </label>
+                            <input type="text" class="form-control" value="<%= e.getTel() %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Website: </label>
+                            <input type="text" class="form-control" value="<%= e.getWeb() %>" readonly>
                         </div>
                         <center> 
                             <input class="btn btn-primary mb-4" type="submit" value="Remover" name="remover"/>
