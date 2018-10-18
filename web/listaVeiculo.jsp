@@ -4,6 +4,8 @@
     Author     : bruno
 --%>
 
+<%@page import="br.com.fatecpg.web.Db"%>
+<%@page import="br.com.fatecpg.web.Veiculo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,15 +28,27 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Placa</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Cor</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <% for(Veiculo v: Db.getVeiculos()){ %>                              
                             <tr>
+                                <% int i = Db.getVeiculos().indexOf(v); %>
+                                <td><%= i %></td>
+                                <td><%= v.getPlaca()%></td>
+                                <td><%= v.getMarca()%></td>
+                                <td><%= v.getModelo()%></td>
+                                <td><%= v.getCor()%></td>   
                                 <td>
-                                    <a class="btn btn-secondary" href="alterarVeiculo.jsp?i=" role="button">Alterar</a>
-                                    <a class="btn btn-secondary" href="removerVeiculo.jsp?i=" role="button">Remover</a>
+                                    <a class="btn btn-secondary" href="alterarVeiculo.jsp?i=<%= i %>" role="button">Alterar</a>
+                                    <a class="btn btn-secondary" href="removerVeiculo.jsp?i=<%= i %>" role="button">Remover</a>
                                 </td>
                             </tr>
+                            <%}%>
                         </tbody>
                         </table>
                 </div>
