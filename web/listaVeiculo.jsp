@@ -25,13 +25,14 @@
             <div class="row">
                 <div class="col-12 my-3">
                     <table class="table table-hover">
-                        <thead>
+                        <thead class="legenda">
                             <tr>
                                 <th>#</th>
                                 <th>Placa</th>
                                 <th>Marca</th>
                                 <th>Modelo</th>
                                 <th>Cor</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
