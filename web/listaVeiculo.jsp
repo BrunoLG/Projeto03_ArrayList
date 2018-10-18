@@ -54,6 +54,10 @@
                         </table>
                 </div>
             </div>
+            <center> 
+                <a class="btn btn-primary mb-4" href="cadastrarVeiculo.jsp" role="button">Cadastrar</a>
+                <a class="btn btn-secondary mb-4" href="index.jsp" role="button">Voltar</a>
+            </center>
         </div>
     </body>
 </html>
