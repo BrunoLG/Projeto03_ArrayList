@@ -33,20 +33,24 @@
                     <h2>Dados do Veiculo</h2>
                     <form method="get" class="my-3">
                         <div class="form-group">
-                            <label>Indice: <%= i %></label>
-                            <input type="hidden" name="i" value="<%= i %>">
+                            <label>Indice: </label>
+                            <input type="text" class="form-control" name="i" value="<%= i %>" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Placa: <%= v.getPlaca() %></label>
+                            <label>Placa: </label>
+                            <input type="text" class="form-control" name="placa" value="<%= v.getPlaca() %>" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Marca: <%= v.getMarca()%></label>
+                            <label>Marca: </label>
+                            <input type="text" class="form-control" name="marca" value="<%= v.getMarca() %>" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Modelo: <%= v.getModelo()%></label>
+                            <label>Modelo: </label>
+                            <input type="text" class="form-control" name="modelo" value="<%= v.getModelo() %>" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Cor: <%= v.getCor()%></label>
+                            <label>Cor: </label>
+                            <input type="text" class="form-control" name="cor" value="<%= v.getCor() %>" readonly>
                         </div>
                         <center> 
                             <input class="btn btn-primary mb-4" type="submit" value="Remover" name="remover"/>
