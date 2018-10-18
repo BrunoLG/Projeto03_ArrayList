@@ -48,5 +48,23 @@ public class Db {
         }
         return empresas;
     }
+    private static final ArrayList<Pessoa> pessoas = new ArrayList<>();
+    
+    public static ArrayList<Pessoa> getPessoas(){
+        if (pessoas.isEmpty()){
+            Pessoa c1 = new Pessoa();
+            c1.setDados("Eduardo Ribas Emmerich", "441.668.788-59", "eduardo.emmerich@hotmail.com", "(13)99209-1398");
+            pessoas.add(c1);
+           
+            Pessoa c2 = new Pessoa();
+            c2.setDados("Bruno", "xxx.xxx.xxx-xx", "bruno@email.com", "(13) 3938-5496");
+            pessoas.add(c2);
+            
+            Pessoa c3 = new Pessoa();
+            c3.setDados("Alessandra", "xxx.xxx.xxx-xx", "alessandra@hotmail.com", "(13)11584-2226");
+            pessoas.add(c3);
+        }
+        return pessoas;
+    }
 }
 

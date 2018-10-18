@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-12 my-3">
                     <table class="table table-hover">
-                        <a href="novo.jsp"><button>Cadastrar nova empresa</button></a>        
+                        <a href="cadastrarEmpresa.jsp"><button>Cadastrar nova empresa</button></a>        
                         <thead>
                             <tr>
                                 <th>Nome</th>

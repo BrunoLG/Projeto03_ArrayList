@@ -3,7 +3,8 @@
     Created on : 17/10/2018, 22:13:45
     Author     : bruno
 --%>
-
+<%@page import="br.com.fatecpg.web.Db"%>
+<%@page import="br.com.fatecpg.web.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,9 @@
         <title>Nome da Página - Remover</title>
         <%@include file="WEB-INF/jspf/head.jspf" %>
     </head>
+    <%  int i = Integer.parseInt(request.getParameter("i")); 
+        Pessoa c = Db.getPessoas().get(i); 
+    %>
     <body class="bg-light">
         <div class="container">
             <div class="row">
@@ -19,13 +23,17 @@
                     <h1 class="display-3">Remover cadastro de Pessoa</h1>           
                 </div>
             </div>
+            <% if(request.getParameter("remover") != null){
+                Db.getPessoas().remove(i);
+                response.sendRedirect("listaPessoa.jsp");
+            } %>
             <div class="row">
                 <div class="col-6 my-3">
                     <h2>Dados do </h2>
                     <form method="get" class="my-3">
                         <div class="form-group">
-                            <label>Nome: </label>
-                            <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+                            Nome: <%= c.getNome() %> </br></br>
+                             <input type="hidden" name="i" value="<%= i %>">
                         </div>
                         <center> 
                             <input class="btn btn-primary mb-4" type="submit" value="Remover" name="remover"/>
