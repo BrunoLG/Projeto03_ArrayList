@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-12 my-3">
                     <table class="table table-hover">   
-                        <thead>
+                        <thead class="legenda">
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>

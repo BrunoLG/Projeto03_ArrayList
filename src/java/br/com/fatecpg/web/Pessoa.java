@@ -6,7 +6,7 @@ public class Pessoa {
     private String email;
     private String telefone;
 
-    public void setDados(String nome, String email, String cpf, String telefone){
+    public void setDados(String nome, String cpf, String email, String telefone){
         this.setNome(nome);
         this.setCpf(cpf);
         this.setEmail(email);        
